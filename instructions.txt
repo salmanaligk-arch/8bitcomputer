@@ -1,0 +1,59 @@
+Here’s how you can **add data to RAM** in your Tiny8 + NiceGUI setup — explained conceptually and in terms of GUI workflow (no code required):
+
+---
+
+# 💾 Adding Data to RAM in Your 8-Bit Computer GUI
+
+### **1️⃣ Through Instruction Input Panel**
+
+1. Use the **operand checkboxes** to set the value you want to store.
+2. Set the **opcode** to a **WRITE or STORE instruction** (depending on Tiny8 instruction set).
+3. Press **LOAD TO MEMORY** to store the instruction in Tiny8 memory.
+4. Execute the instruction (**STEP** or **RUN**) → Tiny8 will perform the memory write.
+5. GUI automatically updates **Memory Panel** → the target RAM address shows the new value.
+
+---
+
+### **2️⃣ Direct Memory Write Panel (Optional)**
+
+* Some simulators include a **RAM editor panel**:
+
+  * Click a memory address → open **8-bit input** (checkboxes or number field)
+  * Set the value → press **WRITE** → Tiny8 updates memory directly
+* GUI refresh highlights the updated address immediately.
+
+---
+
+### **3️⃣ Using the Bus**
+
+* Tiny8 uses the **central bus** for memory operations:
+
+  * Set register (A or B) with the desired data
+  * Execute **STORE instruction**
+  * Tiny8 writes data from the register to the memory address on the bus
+  * GUI shows bus glow → Memory LED update → optional register flash
+
+---
+
+### **4️⃣ Micro-Step Visual Feedback**
+
+* When data is written:
+
+  * The **bus strips glow** according to the value
+  * The **target memory row flashes**
+  * Control signals (MI, RO, II, AO, etc.) indicate which lines are active
+* This makes the write operation visible step-by-step.
+
+---
+
+### **5️⃣ Tips**
+
+* Always **verify the memory address** before writing.
+* Use **STEP mode** for learning → see exactly which micro-steps Tiny8 performs.
+* You can **load multiple instructions** to write multiple memory values in sequence.
+
+---
+
+If you want, I can also **draw a visual step-by-step diagram showing “how data travels from GUI → register → bus → RAM”**, so it’s crystal clear for your GUI design.
+
+Do you want me to make that diagram?
